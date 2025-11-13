@@ -1,0 +1,61 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "comment": "Atlassian MCP - Auto-populate requirements from Jira/Confluence",
+      "url": "https://mcp.atlassian.com/v1/sse",
+      "enabled": false,
+      "usage": [
+        "Enable this in Claude.ai: Settings → Integrations → Atlassian",
+        "Then ask Claude: 'Pull our product requirements from Jira and format them for docs/requirements.md'",
+        "Or: 'Summarize our current sprint tickets and add them to docs/requirements.md'",
+        "Or: 'Get our technical specs from Confluence and update docs/architecture.md'"
+      ],
+      "links": {
+        "github": "https://github.com/atlassian/atlassian-mcp-server",
+        "setup": "https://developer.atlassian.com/cloud/mcp/"
+      }
+    },
+    "fathom": {
+      "comment": "Fathom MCP - Add user behavior insights to requirements",
+      "type": "url",
+      "url": "YOUR_FATHOM_MCP_SERVER_URL",
+      "enabled": false,
+      "env": {
+        "FATHOM_API_KEY": "YOUR_FATHOM_API_KEY",
+        "FATHOM_SITE_ID": "YOUR_FATHOM_SITE_ID"
+      },
+      "usage": [
+        "Get API key from your Fathom Analytics dashboard",
+        "Replace YOUR_FATHOM_API_KEY and YOUR_FATHOM_SITE_ID above",
+        "Then ask Claude: 'Analyze our user behavior from Fathom and add insights to docs/requirements.md'",
+        "Or: 'What are our top user flows? Add them to docs/requirements.md'",
+        "Or: 'Which features get the most usage? Update docs/requirements.md priorities'"
+      ],
+      "links": {
+        "github": "https://github.com/sourcegate/mcp-fathom-server",
+        "fathom": "https://usefathom.com/ref/PORTOLAN"
+      }
+    }
+  },
+  "instructions": {
+    "setup": [
+      "1. Enable the MCP servers you want to use by setting 'enabled': true",
+      "2. For Atlassian: Connect via Claude.ai Settings → Integrations",
+      "3. For Fathom: Add your API credentials above",
+      "4. Use Claude to query these servers and auto-populate your docs"
+    ],
+    "benefits": [
+      "✅ Auto-populate requirements from Jira tickets",
+      "✅ Pull technical specs from Confluence",
+      "✅ Add user behavior insights from analytics",
+      "✅ Keep documentation synchronized with your tools",
+      "✅ Reduce manual documentation overhead"
+    ],
+    "tips": [
+      "💡 Re-run queries periodically to keep docs fresh",
+      "💡 Combine multiple sources: 'Pull Jira requirements and Fathom insights'",
+      "💡 Ask Claude to format data specifically for each doc file",
+      "💡 Use MCP servers during sprint planning to update docs automatically"
+    ]
+  }
+}
