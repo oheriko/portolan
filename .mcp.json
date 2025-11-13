@@ -1,35 +1,21 @@
 {
   "mcpServers": {
-    "atlassian": {
-      "comment": "Atlassian MCP - Auto-populate requirements from Jira/Confluence",
-      "url": "https://mcp.atlassian.com/v1/sse",
-      "enabled": false,
-      "usage": [
-        "Enable this in Claude.ai: Settings → Integrations → Atlassian",
-        "Then ask Claude: 'Pull our product requirements from Jira and format them for docs/requirements.md'",
-        "Or: 'Summarize our current sprint tickets and add them to docs/requirements.md'",
-        "Or: 'Get our technical specs from Confluence and update docs/architecture.md'"
-      ],
-      "links": {
-        "github": "https://github.com/atlassian/atlassian-mcp-server",
-        "setup": "https://developer.atlassian.com/cloud/mcp/"
-      }
-    },
     "fathom": {
-      "comment": "Fathom AI MCP - Search and retrieve meeting information",
-      "type": "url",
-      "url": "YOUR_FATHOM_MCP_SERVER_URL",
+      "comment": "Fathom AI MCP - Search and retrieve meeting information (Claude Code)",
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-fathom-server/dist/index.js"],
       "enabled": false,
       "env": {
         "FATHOM_API_KEY": "${FATHOM_API_KEY}"
       },
-      "usage": [
-        "Get API key from your Fathom AI account: https://app.fathom.video → Settings → API",
-        "Set environment variable: export FATHOM_API_KEY='your-api-key-here'",
-        "Add to ~/.zshrc or ~/.bashrc for persistence",
-        "Then ask Claude: 'Find meetings about [topic] and summarize key decisions'",
-        "Or: 'What action items came from our last planning meeting?'",
-        "Or: 'Search meeting transcripts for discussions about [feature]'"
+      "setup": [
+        "1. Clone the Fathom MCP server: git clone https://github.com/sourcegate/mcp-fathom-server",
+        "2. Install dependencies: cd mcp-fathom-server && npm install && npm run build",
+        "3. Get your API key from https://app.fathom.video → Settings → API",
+        "4. Set environment variable: export FATHOM_API_KEY='your-api-key-here'",
+        "5. Update the 'args' path above to point to your cloned repo's dist/index.js file",
+        "6. Set 'enabled' to true once configured",
+        "7. Ask Claude Code: 'Find meetings about [topic] and summarize key decisions'"
       ],
       "links": {
         "github": "https://github.com/sourcegate/mcp-fathom-server",
@@ -37,25 +23,8 @@
       }
     }
   },
-  "instructions": {
-    "setup": [
-      "1. Enable the MCP servers you want to use by setting 'enabled': true",
-      "2. For Atlassian: Connect via Claude.ai Settings → Integrations",
-      "3. For Fathom AI: Add your API credentials above",
-      "4. Use Claude to query these servers and auto-populate your docs"
-    ],
-    "benefits": [
-      "✅ Auto-populate requirements from Jira tickets",
-      "✅ Pull technical specs from Confluence",
-      "✅ Search meeting transcripts and extract decisions",
-      "✅ Keep documentation synchronized with your tools",
-      "✅ Reduce manual documentation overhead"
-    ],
-    "tips": [
-      "💡 Re-run queries periodically to keep docs fresh",
-      "💡 Combine multiple sources: 'Pull Jira requirements and meeting decisions'",
-      "💡 Ask Claude to format data specifically for each doc file",
-      "💡 Use MCP servers during sprint planning to update docs automatically"
-    ]
+  "notes": {
+    "claude-code": "This config is for Claude Code CLI only",
+    "why-atlassian-removed": "Atlassian MCP requires Claude.ai web interface with OAuth integration, not available in Claude Code CLI"
   }
 }
