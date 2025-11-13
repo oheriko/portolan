@@ -4,7 +4,7 @@
       "comment": "Atlassian MCP - Access Jira and Confluence via official server",
       "command": "npx",
       "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"],
-      "enabled": true
+      "enabled": false
     },
     "fathom": {
       "comment": "Fathom AI MCP - Search and retrieve meeting information (Claude Code)",
