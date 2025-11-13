@@ -82,10 +82,6 @@ mkdir -p .cursor
 ln -sf ../docs/llm.md .cursor/rules
 echo "  ✓ .cursor/rules -> docs/llm.md"
 
-mkdir -p .aider
-ln -sf ../docs/llm.md .aider/conventions
-echo "  ✓ .aider/conventions -> docs/llm.md"
-
 ln -sf docs/llm.md .cursorrules
 echo "  ✓ .cursorrules -> docs/llm.md"
 
@@ -99,7 +95,6 @@ ln -sf ../../.mcp.json .config/claude/mcp_config.json
 echo "  ✓ .config/claude/mcp_config.json -> .mcp.json (template)"
 
 # For Cursor
-mkdir -p .cursor
 ln -sf ../.mcp.json .cursor/mcp.json
 echo "  ✓ .cursor/mcp.json -> .mcp.json"
 
@@ -126,7 +121,7 @@ echo "       Win: %APPDATA%\\Claude\\claude_desktop_config.json"
 echo "     - Restart Claude Desktop"
 echo ""
 echo "     📊 Atlassian MCP: Pull requirements from Jira/Confluence"
-echo "     🔍 Fathom MCP: Add analytics insights to requirements"
+echo "     🎥 Fathom AI MCP: Search meeting transcripts and action items"
 echo ""
 echo "  2. Fill in the [TODO] sections:"
 echo "     - README.md, CHANGELOG.md"
@@ -136,7 +131,7 @@ echo "  3. Start coding with AI assistance!"
 echo ""
 echo "💡 Pro tip: Use MCP queries like:"
 echo "   'Pull our Jira epics and format them for docs/requirements.md'"
-echo "   'Analyze Fathom data and add user insights to requirements'"
+echo "   'Find meetings about [feature] and add decisions to docs/decisions.md'"
 echo ""
 echo "📖 Documentation: https://github.com/oheriko/portolan"
 echo ""

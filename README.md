@@ -2,7 +2,7 @@
 
 _Chart your codebase for AI coding assistants_
 
-Portolan provides documentation templates that give AI tools (Claude Code, Cursor, Aider) the context they need to understand your project. Named after medieval navigation charts that guided sailors through uncharted waters, Portolan helps AI navigate your codebase.
+Portolan provides documentation templates that give AI tools (Claude Code, Cursor) the context they need to understand your project. Named after medieval navigation charts that guided sailors through uncharted waters, Portolan helps AI navigate your codebase.
 
 ## Quick Start
 
@@ -22,8 +22,8 @@ That's it! The script downloads templates, creates symlinks, and sets up MCP con
 - 💡 **docs/decisions.md** - Decision log index
 - 🧪 **docs/testing.md** - Testing strategy
 - 🚀 **docs/deployment.md** - Deployment guide
-- 🔗 **Symlinks** - Automatic setup for Claude, Cursor, Aider
-- 🔌 **MCP Config** - Ready for Atlassian, Fathom integrations
+- 🔗 **Symlinks** - Automatic setup for Claude, Cursor
+- 🔌 **MCP Config** - Ready for Atlassian, Fathom AI integrations
 
 ## Philosophy
 
@@ -39,7 +39,7 @@ Like the medieval portolan charts that evolved through communal knowledge sharin
 
 Portolan includes configuration for MCP servers to auto-populate your docs:
 - **Atlassian MCP** - Pull requirements from Jira/Confluence
-- **Fathom MCP** - Add analytics insights to requirements
+- **Fathom AI MCP** - Search meeting transcripts and extract decisions
 
 See `.mcp.json` for configuration details.
 
@@ -56,6 +56,9 @@ your-project/
 ├── .cursor/
 │   ├── rules -> ../docs/llm.md
 │   └── mcp.json -> ../.mcp.json
+├── .config/
+│   └── claude/
+│       └── mcp_config.json -> ../../.mcp.json
 └── docs/
     ├── llm.md
     ├── requirements.md
